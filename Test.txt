@@ -1,0 +1,14 @@
+GitHub Actions - Overview
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline directly within your GitHub repository.
+
+Key Features
+Workflows - Automated processes triggered by events (push, pull request, schedule, etc.)
+
+Actions - Reusable units of code that perform specific tasks (build, test, deploy, etc.)
+
+Jobs - Steps grouped together that run on the same runner
+
+Runners - Servers that execute your workflows (GitHub-hosted or self-hosted)
+
+Events - GitHub events that trigger workflows:
+
