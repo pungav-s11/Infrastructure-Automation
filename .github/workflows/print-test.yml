@@ -1,8 +1,8 @@
 name: Print Test File
 
-on:
-  push:
-    branches: [feature/pungav ]
+# on:
+  # push:
+    # branches: [feature/pungav ]
 
 jobs:
   print-test:
