@@ -3,8 +3,7 @@ name: Image Bakery Pipeline
 on:
   push:
     branches:
-      - feature/image-bakery
-
+      - feature/IB
   workflow_dispatch:
 
 jobs:
