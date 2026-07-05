@@ -1,0 +1,20 @@
+---
+- name: Update apt package index
+  apt:
+    update_cache: yes
+
+- name: Upgrade installed packages
+  apt:
+    upgrade: dist
+
+- name: Install common packages
+  apt:
+    name:
+      - curl
+      - wget
+      - unzip
+      - git
+      - vim
+      - ca-certificates
+      - software-properties-common
+    state: present

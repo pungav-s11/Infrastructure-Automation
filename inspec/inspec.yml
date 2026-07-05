@@ -1,0 +1,14 @@
+name: image-bakery-profile
+
+title: Image Bakery Validation Profile
+
+maintainer: Pungav Sanmani
+
+copyright: Pungav Sanmani
+
+summary: Inspec profile to validate the Image Bakery AMI
+
+version: 1.0.0
+
+supports:
+  - platform: ubuntu

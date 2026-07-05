@@ -1,0 +1,8 @@
+---
+- name: Configure Ubuntu Image
+  hosts: all
+  become: true
+
+  roles:
+    - common
+    - docker
