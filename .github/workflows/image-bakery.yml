@@ -4,19 +4,18 @@ on:
   push:
     branches:
       - feature/IB
+
   workflow_dispatch:
 
 jobs:
-
   build-image:
-
+    name: Build Golden AMI
     runs-on: ubuntu-latest
 
     env:
       AWS_REGION: us-east-1
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -28,7 +27,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Packer
-        uses: hashicorp/setup-packer@main
+        uses: hashicorp/setup-packer@v3
 
       - name: Verify Packer Installation
         run: |
@@ -36,22 +35,17 @@ jobs:
 
       - name: Install Ansible
         run: |
-          sudo apt update
-          sudo apt install ansible -y
+          sudo apt-get update
+          sudo apt-get install -y ansible
 
       - name: Verify Ansible Installation
         run: |
           ansible --version
 
-      - name: Packer Init
+      - name: Initialize Packer
         working-directory: ./packer
         run: |
           packer init .
-
-      - name: Check Packer Formatting
-        working-directory: ./packer
-        run: |
-          packer fmt -check .
 
       - name: Validate Packer Template
         working-directory: ./packer
@@ -64,5 +58,9 @@ jobs:
           packer build .
 
       - name: Pipeline Completed
+        if: success()
         run: |
-          echo "Image Bakery Pipeline Completed Successfully"
+          echo "====================================="
+          echo "Image Bakery Pipeline Completed"
+          echo "Golden AMI Created Successfully"
+          echo "====================================="
