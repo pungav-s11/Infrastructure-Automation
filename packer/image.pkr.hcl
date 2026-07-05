@@ -102,20 +102,15 @@ build {
 
   provisioner "ansible" {
 
-    playbook_file = "../ansible/playbook.yml"
+  playbook_file = "../ansible/playbook.yml"
 
-    user = var.ssh_username
+  user = var.ssh_username
 
-    use_proxy = false
+  use_proxy = false
 
-    ansible_env_vars = [
-      "ANSIBLE_HOST_KEY_CHECKING=False"
-    ]
-
-    extra_arguments = [
-      "--scp-extra-args",
-      "-O"
-    ]
-  }
+  ansible_env_vars = [
+    "ANSIBLE_HOST_KEY_CHECKING=False"
+  ]
+}
 
 }
