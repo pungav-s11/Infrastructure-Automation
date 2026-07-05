@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "instance_type" {
   type        = string
   description = "Temporary EC2 instance type used for building the AMI"
-  default     = "t2.micro"
+  default     = ""t3.micro"
 }
 
 variable "ssh_username" {
