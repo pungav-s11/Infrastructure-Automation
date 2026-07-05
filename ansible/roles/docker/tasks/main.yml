@@ -6,11 +6,11 @@
     update_cache: yes
 
 - name: Enable Docker service
-  systemd:
+  service:
     name: docker
     enabled: yes
 
 - name: Start Docker service
-  systemd:
+  service:
     name: docker
     state: started

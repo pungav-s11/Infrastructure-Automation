@@ -6,6 +6,7 @@
 - name: Upgrade installed packages
   apt:
     upgrade: dist
+    force_apt_get: yes
 
 - name: Install common packages
   apt:
@@ -18,3 +19,4 @@
       - ca-certificates
       - software-properties-common
     state: present
+    update_cache: yes
