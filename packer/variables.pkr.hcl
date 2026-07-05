@@ -7,17 +7,17 @@ variable "aws_region" {
 variable "instance_type" {
   type        = string
   description = "Temporary EC2 instance type used for building the AMI"
-  default     = ""t3.micro"
+  default     = "t3.micro"
 }
 
 variable "ssh_username" {
   type        = string
-  description = "SSH username for the source Ubuntu AMI"
+  description = "SSH username for the Ubuntu AMI"
   default     = "ubuntu"
 }
 
 variable "ami_name" {
   type        = string
-  description = "Base name for the generated AMI"
+  description = "Base name of the generated AMI"
   default     = "image-bakery-ubuntu"
 }
